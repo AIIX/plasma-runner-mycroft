@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Ask Mycroft
+Comment=Mycroft Integration with Krunner
+X-KDE-ServiceTypes=Plasma/Runner
+Type=Service
+Icon=mycroft-plasma-appicon
+X-KDE-Library=krunner_mycroft
+X-KDE-PluginInfo-Author=Aditya Mehra
+X-KDE-PluginInfo-Email=aix@outlook.com
+X-KDE-PluginInfo-Name=Mycroft
+X-KDE-PluginInfo-Version= 0.1.0
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-AdvertiseSingleRunnerQueryMode=true
