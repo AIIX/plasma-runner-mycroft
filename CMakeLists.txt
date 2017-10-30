@@ -8,7 +8,7 @@ set (CMAKE_MODULE_PATH
 
 
 # Find the required Libaries
-find_package (Qt5 ${QT_MIN_VERSION} REQUIRED CONFIG COMPONENTS Widgets Core Network Quick WebSockets)
+find_package (Qt5 ${QT_MIN_VERSION} REQUIRED CONFIG COMPONENTS Widgets Core Network Quick WebSockets DBus)
 find_package (KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n Service Runner PlasmaQuick)
 
 include(KDEInstallDirs)
@@ -21,7 +21,7 @@ set(krunner_mycroft_SRCS
 
 # Now make sure all files get to the right place
 add_library(krunner_mycroft MODULE ${krunner_mycroft_SRCS})
-target_link_libraries(krunner_mycroft KF5::Runner Qt5::Widgets Qt5::WebSockets
+target_link_libraries(krunner_mycroft KF5::Runner Qt5::Widgets Qt5::WebSockets Qt5::DBus
                       KF5::I18n
                       KF5::Service
                       KF5::Plasma)

@@ -28,6 +28,7 @@
 #include <QJsonArray>
 #include <QJsonValue>
 #include <QJsonObject>
+#include <QtDBus>
 
 static QString sendQuery;
 
@@ -93,6 +94,10 @@ void Mycroft::onConnected()
     doc.setObject(socketObject);
     QString jsend = doc.toJson(QJsonDocument::Compact);
     m_webSocket->sendTextMessage(jsend);
+    QDBusInterface iface("org.kde.mycroftinterface", "/mycroftinterface", "org.kde.mycroftinterface", QDBusConnection::sessionBus());
+    if (iface.isValid()) {
+        iface.call("showMycroft");
+    }    
     connect(m_webSocket, &QWebSocket::textMessageReceived, this, &Mycroft::onTextMessageReceived);
 }
 
